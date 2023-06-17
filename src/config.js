@@ -30,3 +30,8 @@ Config.playerRotateFrame = 10; // 回転に消費するフレーム数
 
 Config.zenkeshiDuration = 150; // 全消し時のアニメーションミリセカンド
 Config.gameOverFrame = 3000; // ゲームオーバー演出のサイクルフレーム
+
+// おじゃまぷよ
+Config.enableOjamaPuyo = true; // おじゃまぷよを使うかどうか
+Config.ojamaRate = 20; // おじゃまぷよの出現率(%)
+Config.ojamaPuyoIndex = 99; // おじゃまぷよのインデックス固定値
