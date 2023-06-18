@@ -14,13 +14,29 @@ class PuyoImage {
             image.style.position = 'absolute';
             this.puyoImages[i] = image;
         }
+        if (Config.enableOjamaPuyo) {
+            const ojamaImage = document.getElementById('ojama_puyo');
+            ojamaImage.removeAttribute('id');
+            ojamaImage.width = Config.puyoImgWidth;
+            ojamaImage.height = Config.puyoImgHeight;
+            ojamaImage.style.position = 'absolute';
+            let index = this.puyoImages.length;
+            this.puyoImages[Config.ojamaPuyoIndex] = ojamaImage;
+        }
         this.batankyuImage = document.getElementById('batankyu');
         this.batankyuImage.width = Config.puyoImgWidth * 6;
         this.batankyuImage.style.position = 'absolute';
     }
 
     static getPuyo(index) {
-        const image = this.puyoImages[index - 1].cloneNode(true);
+        let puyoIdx = index - 1;
+        // おじゃまぷよ有りの場合
+        if (Config.enableOjamaPuyo) {
+            if (index == Config.ojamaPuyoIndex) {
+                puyoIdx = Config.ojamaPuyoIndex;
+            }
+        }
+        const image = this.puyoImages[puyoIdx].cloneNode(true);
         return image;
     }
 

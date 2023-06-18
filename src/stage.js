@@ -175,6 +175,15 @@ class Stage {
                     continue;
                 }
                 const cell = this.board[dy][dx];
+
+                // おじゃまぷよ有りの場合
+                if (Config.enableOjamaPuyo) {
+                    // おじゃまぷよなら消さない
+                    if (cell && cell.puyo == Config.ojamaPuyoIndex) {
+                        continue;
+                    }
+                }
+
                 if(!cell || cell.puyo !== puyo) {
                     // ぷよの色が違う
                     continue;
