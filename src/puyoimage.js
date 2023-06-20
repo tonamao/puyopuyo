@@ -7,7 +7,7 @@ class PuyoImage {
     static initialize() {
         this.puyoImages = [];
         for(let i = 0; i < 5; i++) {
-            const image = document.getElementById(`puyo_${i + 1}`);
+            const image = document.getElementById(`cookie_${i + 1}`);
             image.removeAttribute('id');
             image.width = Config.puyoImgWidth;
             image.height = Config.puyoImgHeight;
